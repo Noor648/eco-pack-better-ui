@@ -31,6 +31,42 @@ export const categories = [
   { name: 'Coffee/Tea Cafe', image: '/images/category-1.webp' },
 ];
 
+export const PRODUCT_DATA = {
+  title: 'Corrugated Flat Box - 12.5" x 10.5" x 2" Inches',
+  rating: 'Trusted by 10,000+ customers',
+  price: 1300,
+  quantityOptions: ['1 Piece', '20 Pieces', '40 Pieces'],
+  description: ['Free Returns guarantee in case of damage', 'Food grade material', 'Secure payments'],
+  relatedProduct: {
+    title: 'White cake box 12x12x4 inches for cakes/tarts',
+    quantity: '25 pieces',
+    price: 2500,
+    originalPrice: 2800,
+  },
+  images: [
+    'images/product-1.webp',
+    'images/product-2.webp',
+    'images/product-3.webp',
+    'images/product-4.webp',
+    'images/product-5.webp',
+    'images/product-1.webp',
+    'images/product-2.webp',
+    'images/product-3.webp',
+    'images/product-4.webp',
+    'images/product-5.webp',
+    'images/product-1.webp',
+    'images/product-2.webp',
+    'images/product-3.webp',
+    'images/product-4.webp',
+    'images/product-5.webp',
+    'images/product-1.webp',
+    'images/product-2.webp',
+    'images/product-3.webp',
+    'images/product-4.webp',
+    'images/product-5.webp',
+  ],
+};
+
 export const products = [
   {
     id: 1,

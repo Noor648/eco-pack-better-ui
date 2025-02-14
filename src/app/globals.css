@@ -19,3 +19,12 @@ body {
   background: var(--background);
   font-family: var(--font-varela-round), sans-serif;
 }
+
+/* In your Tailwind CSS file */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  scrollbar-width: none; /* For Firefox */
+}

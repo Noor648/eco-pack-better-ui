@@ -1,13 +1,14 @@
 import type { Metadata } from 'next';
 import { Varela_Round } from 'next/font/google';
 import './globals.css';
+
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 const varelaRound = Varela_Round({
+  subsets: ['latin'], // Correctly specify subsets
+  weight: '400', // Make sure the weight matches the available font weights
   variable: '--font-varela-round',
-  subsets: ['latin'],
-  weight: '400',
 });
 
 export const metadata: Metadata = {
@@ -22,8 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${varelaRound.variable} antialiased`}>
-        {/* Navbar inside <body> */}
+      <body className={`${varelaRound.variable}`}>
         <Navbar />
         <main>{children}</main>
         <Footer />

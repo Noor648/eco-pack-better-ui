@@ -1,3 +1,5 @@
+'use client';
+import { useRouter } from 'next/navigation';
 import { FaSearch, FaPlus } from 'react-icons/fa';
 
 type ProductProps = {
@@ -9,8 +11,13 @@ type ProductProps = {
 };
 
 export default function Product({ imageSrc, name, isOnSale = false, originalPrice, price }: ProductProps) {
+  const router = useRouter();
+
+  const navigateToProduct = () => {
+    router.push('/product');
+  };
   return (
-    <div className="relative group">
+    <div className="relative group" onClick={navigateToProduct}>
       {/* Sale Badge */}
       {isOnSale && <span className="absolute left-0 bg-red-500 text-white text-xs py-1 px-2">SALE</span>}
 
