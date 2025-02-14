@@ -44,10 +44,10 @@ export default function Slider({ slides, loop = true, effect = 'fade', speed = 1
 
       {/* Custom Navigation Buttons */}
       <div className="absolute bottom-5 right-5 flex justify-end gap-3 z-10">
-        <button className="custom-prev bg-white p-4 rounded-full text-green-500 shadow hover:scale-110 transform transition-transform duration-200">
+        <button className="custom-prev bg-white p-4 rounded-full text-green-500 shadow hover:scale-110">
           {'<'}
         </button>
-        <button className="custom-next bg-white p-4 rounded-full text-green-500 shadow hover:scale-110 transform transition-transform duration-200">
+        <button className="custom-next bg-white p-4 rounded-full text-green-500 shadow hover:scale-110">
           {'>'}
         </button>
       </div>

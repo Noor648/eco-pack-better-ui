@@ -9,7 +9,7 @@ export default function Category({ imageSrc, name }: CategoryProps) {
       <img
         src={imageSrc}
         alt={name}
-        className="w-full h-32 object-fit rounded-lg mb-3 transition-transform duration-200 hover:scale-105"
+        className="w-full h-48 object-cover rounded-lg mb-3 transition-transform duration-200 hover:scale-105"
       />
       <p className="text-[16px] text-gray-600">{name}</p>
     </div>
