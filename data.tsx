@@ -1,9 +1,6 @@
-import { FaFacebook, FaLinkedinIn } from "react-icons/fa";
-import { LuInstagram } from "react-icons/lu";
-
 export const navLinks = [
   { label: 'Home', href: '/' },
-  { label: 'Categories', dropdown: true, href: '/' },
+  { label: 'Categories', dropdown: true, href: '/collections' },
   { label: 'Best Selling', href: '/best-selling' },
   { label: 'New Arrivals', href: '/new-arrivals' },
   { label: 'Bundles', href: '/bundles' },

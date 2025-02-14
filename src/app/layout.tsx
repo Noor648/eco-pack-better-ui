@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Varela_Round } from 'next/font/google';
 import './globals.css';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 const varelaRound = Varela_Round({
   variable: '--font-varela-round',
@@ -20,7 +22,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${varelaRound.variable} antialiased`}>{children}</body>
+      <body className={`${varelaRound.variable} antialiased`}>
+        {/* Navbar inside <body> */}
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }

@@ -12,7 +12,6 @@ import Newsletter from '@/components/NewsLetter';
 export default function Home() {
   return (
     <div className="items-center">
-      <Navbar />
       <Hero />
       <div className="max-w-[1440px] mx-auto">
         {/* Category Section */}
@@ -40,7 +39,6 @@ export default function Home() {
       </div>
       <Features features={featuresData} />;
       <Newsletter />;
-      <Footer />
     </div>
   );
 }
