@@ -1,4 +1,5 @@
-import { customerSupport, navLinks, stayInTouch } from '../../data';
+import { stayInTouch } from '@/Constants/StayInTouchContants';
+import { customerSupport, navLinks } from '../../data';
 
 const Footer = () => {
   return (
