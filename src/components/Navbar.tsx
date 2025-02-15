@@ -5,11 +5,13 @@ import { category, navLinks } from '../../data';
 import { AiOutlineDown } from 'react-icons/ai';
 import { CiSearch } from 'react-icons/ci';
 import { RxCross2 } from 'react-icons/rx';
+import { useRouter } from 'next/navigation';
 
 export default function Navbar() {
   const [searchOpen, setSearchOpen] = useState(false);
-
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const router = useRouter();
 
   return (
     <nav className="flex items-center justify-between px-8 py-3 shadow-md">
@@ -27,7 +29,12 @@ export default function Navbar() {
               onMouseEnter={() => setIsDropdownOpen(true)}
               onMouseLeave={() => setIsDropdownOpen(false)}
             >
-              <button className="flex items-center text-[14px] py-2 border-b-2 border-white hover:border-black">
+              <button
+                className="flex items-center text-[14px] py-2 border-b-2 border-white hover:border-black"
+                onClick={() => {
+                  router.push(link.href);
+                }}
+              >
                 {link.label}
                 <AiOutlineDown className="text-sm pl-1" />
               </button>
