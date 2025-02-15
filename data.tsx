@@ -7,7 +7,7 @@ export const navLinks = [
   { label: 'Bulk Purchase', href: '/bulk-purchase' },
 ];
 
-export const category = [
+export const categories = [
   { name: 'Customized Printed Sticker', image: '/images/category-1.webp', href: '/collections/listing' },
   { name: 'Restaurant & Cafes', image: '/images/category-2.webp', href: '/collections/listing' },
   { name: 'Birchwood Cutlery', image: '/images/category-3.webp', href: '/collections/listing' },
@@ -17,18 +17,6 @@ export const category = [
   { name: 'Ecommerce Boxes', image: '/images/category-3.webp', href: '/collections/listing' },
   { name: 'Kraft Bowls', image: '/images/category-4.webp', href: '/collections/listing' },
   { name: 'Coffee/Tea Cafe', image: '/images/category-1.webp', href: '/collections/listing' },
-];
-
-export const categories = [
-  { name: 'Customized Printed Sticker', image: '/images/category-1.webp' },
-  { name: 'Restaurant & Cafes', image: '/images/category-2.webp' },
-  { name: 'Birchwood Cutlery', image: '/images/category-3.webp' },
-  { name: 'Bakery and Cake', image: '/images/category-4.webp' },
-  { name: 'Salad & Rice Bowls', image: '/images/category-1.webp' },
-  { name: 'Paper Bags', image: '/images/category-2.webp' },
-  { name: 'Ecommerce Boxes', image: '/images/category-3.webp' },
-  { name: 'Kraft Bowls', image: '/images/category-4.webp' },
-  { name: 'Coffee/Tea Cafe', image: '/images/category-1.webp' },
 ];
 
 export const PRODUCT_DETAILS = {

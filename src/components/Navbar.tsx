@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-import { category, navLinks } from '../../data';
+import { categories, navLinks } from '../../data';
 import { AiOutlineDown } from 'react-icons/ai';
 import { CiSearch } from 'react-icons/ci';
 import { RxCross2 } from 'react-icons/rx';
@@ -42,7 +42,7 @@ export default function Navbar() {
               {isDropdownOpen && (
                 <div className="absolute text-[13px] text-gray-700 bg-white border border-gray-300 rounded shadow-md z-10 ">
                   <ul>
-                    {category.map((category) => (
+                    {categories.map((category) => (
                       <li key={category.name}>
                         <Link href={category.href} className="block px-4 py-2 hover:underline whitespace-nowrap">
                           {category.name}

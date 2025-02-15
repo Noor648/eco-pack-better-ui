@@ -19,7 +19,7 @@ export default function Home() {
           <h2 className="text-4xl font-semi-bold text-center text-gray-600 mb-9">Shop By Category</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 max-w-[1440px] px-4 mx-auto">
             {categories.map((category, index) => (
-              <Category key={index} imageSrc={category.image} name={category.name} />
+              <Category key={index} imageSrc={category.image} name={category.name} href={category.href}/>
             ))}
           </div>
         </section>

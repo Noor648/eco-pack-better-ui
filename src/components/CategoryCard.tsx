@@ -1,11 +1,16 @@
+'use client';
+import { useRouter } from 'next/navigation';
+
 type CategoryProps = {
   imageSrc: string;
   name: string;
+  href: string;
 };
 
-export default function Category({ imageSrc, name }: CategoryProps) {
+export default function Category({ imageSrc, name, href }: CategoryProps) {
+  const router = useRouter();
   return (
-    <div className="flex flex-col items-center text-center bg-white ">
+    <div className="flex flex-col items-center text-center bg-white " onClick={() => router.push(href)}>
       <img
         src={imageSrc}
         alt={name}
