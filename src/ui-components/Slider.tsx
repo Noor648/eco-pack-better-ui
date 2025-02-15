@@ -6,6 +6,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-fade';
 import { useEffect } from 'react';
+import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 
 type SliderProps = {
   slides: {
@@ -43,9 +44,13 @@ export default function Slider({ slides, loop = true, effect = 'fade', speed = 1
       </Swiper>
 
       {/* Custom Navigation Buttons */}
-      <div className="w-full items-right absolute bottom-5 right-5 flex justify-end gap-3 z-10">
-        <button className="custom-prev bg-white p-4 rounded-full text-green-500 shadow">{'<'}</button>
-        <button className="custom-next bg-white p-4 rounded-full text-green-500 shadow">{'>'}</button>
+      <div className="w-full items-right absolute bottom mt-[-20px] text-black right-5 flex justify-end gap-3 z-10">
+        <button className="custom-prev bg-white px-3 py-3 rounded-full shadow hover:scale-105">
+          <MdChevronLeft size={20} />
+        </button>
+        <button className="custom-next bg-white px-3 py-3 rounded-full shadow hover:scale-105">
+          <MdChevronRight size={20} />
+        </button>
       </div>
     </div>
   );

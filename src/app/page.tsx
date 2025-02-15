@@ -37,8 +37,8 @@ export default function Home() {
           <ProductGrid products={products.slice(0, 5)} />
         </Section>
       </div>
-      <Features features={featuresData} />;
-      <Newsletter />;
+      <Features features={featuresData} />
+      <Newsletter />
     </div>
   );
 }

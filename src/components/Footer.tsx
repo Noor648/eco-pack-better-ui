@@ -49,7 +49,7 @@ const Footer = () => {
             <h4 className="font-semibold mb-2">Follow us</h4>
             <div className="flex space-x-4">
               {stayInTouch.socialLinks.map((social) => (
-                <a key={social.platform} href={social.href} className="text-black hover:text-gray-900">
+                <a key={social.platform} href={social.href} className="text-black hover:scale-110">
                   {social.icon}
                 </a>
               ))}
