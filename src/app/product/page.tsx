@@ -1,78 +1,99 @@
 'use client';
 import React, { useState } from 'react';
-import { PRODUCT_DATA } from '../../../data';
 import ProductGallery from '@/components/ProductGallery';
+import { MdOutlineStarBorderPurple500 } from 'react-icons/md';
+import Accordion from '@/ui-components/Accordian';
+import { PRODUCT_DETAILS, products } from '../../../data';
+import { ProductGrid } from '@/components/ProductGrid';
+import { Section } from '@/components/Section';
 
 const ProductPage = () => {
-  const [selectedQuantity, setSelectedQuantity] = useState(PRODUCT_DATA.quantityOptions[1]);
+  const [selectedQuantity, setSelectedQuantity] = useState(PRODUCT_DETAILS.quantityOptions[1]);
 
   return (
-    <div className="p-5 md:flex md:space-x-6">
-      {/* Left Section - Image Gallery */}
-      <div className="flex-1">
-        <ProductGallery images={PRODUCT_DATA.images} />
-      </div>
-
-      {/* Right Section - Product Details */}
-      <div className="flex-1 space-y-4">
-        <h1 className="text-2xl font-bold">{PRODUCT_DATA.title}</h1>
-        <p className="text-green-600">{PRODUCT_DATA.rating}</p>
-
-        {/* Quantity Selector */}
-        <div className="flex space-x-4 items-center">
-          {PRODUCT_DATA.quantityOptions.map((option, index) => (
-            <button
-              key={index}
-              onClick={() => setSelectedQuantity(option)}
-              className={`px-4 py-2 border rounded-md ${
-                selectedQuantity === option ? 'bg-green-500 text-white' : 'bg-white text-gray-700 border-gray-300'
-              }`}
-            >
-              {option}
-            </button>
-          ))}
+    <div>
+      <div className="p-5 md:flex md:space-x-6">
+        {/* Left Section - Image Gallery */}
+        <div className="flex-1">
+          <ProductGallery images={PRODUCT_DETAILS.images} />
         </div>
 
-        <p className="text-xl font-semibold">Price: Rs. {PRODUCT_DATA.price.toLocaleString()}</p>
+        {/* Right Section - Product Details */}
+        <div className="flex-1 space-y-5">
+          <h1 className="text-4xl font-normal text-gray-700">{PRODUCT_DETAILS.title}</h1>
 
-        <div className="flex space-x-4">
-          <button className="px-6 py-3 bg-green-600 text-white rounded-md">Add to cart</button>
-          <button className="px-6 py-3 bg-black text-white rounded-md">Buy it now</button>
-        </div>
+          {/* Rating Section */}
+          <div className="flex items-center space-x-1">
+            {Array.from({ length: 5 }).map((_, index) => (
+              <MdOutlineStarBorderPurple500 key={index} className="text-green-500" />
+            ))}
+            <p className="text-black">
+              Trusted by <b>{PRODUCT_DETAILS.rating}</b> Customers
+            </p>
+          </div>
 
-        {/* Related Product */}
-        <div className="border-t pt-4 mt-4">
-          <h2 className="text-lg font-bold">You may also like</h2>
-          <div className="flex items-center space-x-4 mt-2">
-            <img
-              src="/images/product-5.webp" // Placeholder path
-              alt="Related product"
-              className="w-24 h-24 border rounded-md"
-            />
-            <div>
-              <p>{PRODUCT_DATA.relatedProduct.title}</p>
-              <p className="text-sm text-gray-500">{PRODUCT_DATA.relatedProduct.quantity}</p>
-              <p className="text-sm text-green-600 font-bold">
-                Rs. {PRODUCT_DATA.relatedProduct.price.toLocaleString()}{' '}
-                <span className="line-through text-gray-400">
-                  Rs. {PRODUCT_DATA.relatedProduct.originalPrice.toLocaleString()}
-                </span>
-              </p>
-              <button className="px-4 py-2 bg-green-600 text-white text-sm rounded-md">+ Add</button>
+          {/* Quantity Selector */}
+          <p className="text-black">Quantity</p>
+          <div className="flex space-x-4 items-center">
+            {PRODUCT_DETAILS.quantityOptions.map((option, index) => (
+              <button
+                key={index}
+                onClick={() => setSelectedQuantity(option)}
+                className={`px-4 py-2 border rounded-md ${
+                  selectedQuantity === option ? 'bg-green-500 text-white' : 'bg-white text-gray-700 border-gray-300'
+                }`}
+              >
+                {option}
+              </button>
+            ))}
+          </div>
+
+          {/* Price */}
+          <p className="text-xl font-normal">Price: Rs. {PRODUCT_DETAILS.price.toLocaleString()}</p>
+
+          <button className="w-full px-6 py-3 bg-green-700 border border-black text-white rounded-md">
+            Buy it now
+          </button>
+
+          {/* Related Product */}
+          <div>
+            <h2 className="text-lg font-medium">You may also like</h2>
+            <div className="flex items-center space-x-4 mt-2">
+              <img src="/images/product-5.webp" alt="Related product" className="w-24 h-24 border rounded-md" />
+              <div>
+                <p>{PRODUCT_DETAILS.relatedProduct.title}</p>
+                <p className="text-sm text-gray-500">{PRODUCT_DETAILS.relatedProduct.quantity}</p>
+                <p className="text-sm text-green-600 font-bold">
+                  Rs. {PRODUCT_DETAILS.relatedProduct.price.toLocaleString()}{' '}
+                  <span className="line-through text-gray-400">
+                    Rs. {PRODUCT_DETAILS.relatedProduct.originalPrice.toLocaleString()}
+                  </span>
+                </p>
+                <button className="px-4 py-2 bg-green-600 text-white text-sm rounded-md">+ Add</button>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Additional Information */}
-        <ul className="space-y-2">
-          {PRODUCT_DATA.description.map((desc, index) => (
-            <li key={index} className="text-sm flex items-center space-x-2">
-              <span className="text-green-500">✔</span>
-              <span>{desc}</span>
-            </li>
-          ))}
-        </ul>
+          {/* Additional Information */}
+          <ul className="space-y-2">
+            {PRODUCT_DETAILS.description.map((desc, index) => (
+              <li key={index} className="text-sm flex items-center space-x-2">
+                <span className="text-green-500">✔</span>
+                <span>{desc}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
+
+      {/* Accordion Section */}
+      <div className="p-8 w-full">
+        <Accordion items={PRODUCT_DETAILS.accordionData} />
+      </div>
+
+      <Section title="You may also like">
+        <ProductGrid products={products.slice(0, 5)} />
+      </Section>
     </div>
   );
 };

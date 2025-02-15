@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 
 const ProductGallery = ({ images }: { images: string[] }) => {
   const [selectedImage, setSelectedImage] = useState(images[0]);
@@ -36,20 +37,19 @@ const ProductGallery = ({ images }: { images: string[] }) => {
 
       {/* Thumbnail Scroll Section */}
       <div className="relative">
-        {/* Scroll Buttons (visible only if scrollable) */}
         {isScrollable && (
           <>
             <button
               onClick={() => scrollThumbnails('left')}
-              className="absolute left-0 top-1/2 -translate-y-1/2 bg-white shadow-md rounded-full p-2 z-10 hidden sm:block"
+              className="absolute left-0 top-1/2 -translate-y-1/2 bg-white shadow-md rounded-full p-2 z-10 hidden sm:block hover:scale-105"
             >
-              ◀
+              <MdChevronLeft size={20} />
             </button>
             <button
               onClick={() => scrollThumbnails('right')}
-              className="absolute right-0 top-1/2 -translate-y-1/2 bg-white shadow-md rounded-full p-2 z-10 hidden sm:block"
+              className="absolute right-0 top-1/2 -translate-y-1/2 bg-white shadow-md rounded-full p-2 z-10 hidden sm:block hover:scale-105"
             >
-              ▶
+              <MdChevronRight size={20} />
             </button>
           </>
         )}
@@ -57,8 +57,8 @@ const ProductGallery = ({ images }: { images: string[] }) => {
         {/* Thumbnails */}
         <div
           ref={thumbnailRef}
-          className="flex items-center space-x-4 overflow-x-auto no-scrollbar border-t border-gray-300 pt-4"
-          style={{ overflowY: 'hidden' }} // Prevents vertical scrolling
+          className="flex items-center space-x-4 overflow-x-auto no-scrollbar"
+          style={{ overflowY: 'hidden' }}
         >
           {images.map((image, index) => (
             <img

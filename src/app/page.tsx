@@ -14,7 +14,7 @@ export default function Home() {
     <div className="items-center">
       <Hero />
       <div className="max-w-[1440px] mx-auto">
-        {/* Category Section */}
+
         <section className="py-10 ">
           <h2 className="text-4xl font-semi-bold text-center text-gray-600 mb-9">Shop By Category</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 max-w-[1440px] px-4 mx-auto">
@@ -23,15 +23,15 @@ export default function Home() {
             ))}
           </div>
         </section>
-        {/* New Arrivals Section */}
+        
         <Section title="New Arrivals" link="/new-arrivals">
           <ProductGrid products={products.slice(0, 5)} />
         </Section>
-        {/* Best Sellers Section */}
+
         <Section title="Best Sellers" link="/best-sellers">
           <ProductGrid products={products.slice(0, 5)} />
         </Section>
-        {/* Save on Bundles Section */}
+        
         <Section title="Save on Bundles" link="/bundles">
           <ProductGrid products={products.slice(0, 5)} />
           <ProductGrid products={products.slice(0, 5)} />

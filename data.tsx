@@ -31,9 +31,9 @@ export const categories = [
   { name: 'Coffee/Tea Cafe', image: '/images/category-1.webp' },
 ];
 
-export const PRODUCT_DATA = {
+export const PRODUCT_DETAILS = {
   title: 'Corrugated Flat Box - 12.5" x 10.5" x 2" Inches',
-  rating: 'Trusted by 10,000+ customers',
+  rating: '10,000+',
   price: 1300,
   quantityOptions: ['1 Piece', '20 Pieces', '40 Pieces'],
   description: ['Free Returns guarantee in case of damage', 'Food grade material', 'Secure payments'],
@@ -49,21 +49,26 @@ export const PRODUCT_DATA = {
     'images/product-3.webp',
     'images/product-4.webp',
     'images/product-5.webp',
-    'images/product-1.webp',
-    'images/product-2.webp',
-    'images/product-3.webp',
-    'images/product-4.webp',
-    'images/product-5.webp',
-    'images/product-1.webp',
-    'images/product-2.webp',
-    'images/product-3.webp',
-    'images/product-4.webp',
-    'images/product-5.webp',
-    'images/product-1.webp',
-    'images/product-2.webp',
-    'images/product-3.webp',
-    'images/product-4.webp',
-    'images/product-5.webp',
+  ],
+  accordionData: [
+    {
+      title: 'Description',
+      content: `
+        Dimensions: 10" x 8" x 2" Inches
+        Ideal for: Resin Art, Photo Frames, Trays, Flat Items
+        Material: Kraft Paper + SF + Kraft Paper
+        Compostable and Biodegradable
+      `,
+    },
+    {
+      title: 'Shipping Information',
+      content:
+        'COD shipping is available in all major cities of Pakistan. For orders above Rs. 10,000, bank transfer is required.',
+    },
+    {
+      title: 'Ask a Question',
+      content: 'For any inquiries, please reach out to our customer support.',
+    },
   ],
 };
 

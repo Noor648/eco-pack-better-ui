@@ -19,7 +19,7 @@ export default function Product({ imageSrc, name, isOnSale = false, originalPric
   return (
     <div className="relative group" onClick={navigateToProduct}>
       {/* Sale Badge */}
-      {isOnSale && <span className="absolute left-0 bg-red-500 text-white text-xs py-1 px-2">SALE</span>}
+      {isOnSale && <span className="absolute left-0 bg-red-500 text-white text-xs py-1 px-2 z-10">SALE</span>}
 
       {/* Image */}
       <div className="relative">
