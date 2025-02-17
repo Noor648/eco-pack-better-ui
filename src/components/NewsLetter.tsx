@@ -10,7 +10,7 @@ const Newsletter = () => {
   //   };
 
   return (
-    <div className="bg-green-700 text-white py-10 px-4 text-center">
+    <div className="bg-primary text-white py-10 px-4 text-center">
       <h3 className="text-4xl font-normal pb-5">Sign up and save</h3>
       <p className="mt-2 mb-5 text-lg">
         Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.
@@ -29,7 +29,7 @@ const Newsletter = () => {
         />
         <button
           type="submit"
-          className="bg-white text-green-700 px-4 py-2 rounded-lg hover:bg-gray-200 transition disabled:opacity-50"
+          className="bg-white text-primary px-4 py-2 rounded-lg hover:bg-gray-200 transition disabled:opacity-50"
           //   disabled={loading}
         >
           {/* {loading ? 'Submitting...' : 'Subscribe'} */}

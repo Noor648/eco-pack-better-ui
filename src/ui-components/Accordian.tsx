@@ -33,7 +33,7 @@ const Accordion = ({ items }: { items: AccordionItem[] }) => {
               openIndex === index ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
             }`}
           >
-            <div className="p-6 text-gray-600">{item.content}</div>
+            <div className="p-6 text-tertiary">{item.content}</div>
           </div>
         </div>
       ))}

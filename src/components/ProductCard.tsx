@@ -37,14 +37,14 @@ export default function Product({ imageSrc, name, isOnSale = false, originalPric
       </div>
 
       {/* Product Info */}
-      <h3 className="text-sm font-normal text-gray-600 mb-2">{name}</h3>
+      <h3 className="text-sm font-normal text-tertiary mb-2">{name}</h3>
       {isOnSale ? (
         <>
           <div className="text-gray-500 line-through">{originalPrice}</div>
-          <div className="text-green-600 font-semibold">{price}</div>
+          <div className="text-secondary font-semibold">{price}</div>
         </>
       ) : (
-        <div className="text-green-600 font-semibold">{originalPrice}</div>
+        <div className="text-secondary font-semibold">{originalPrice}</div>
       )}
     </div>
   );
