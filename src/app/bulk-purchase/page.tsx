@@ -183,7 +183,7 @@ const BulkPurchaseForm = () => {
 
         <button
           type="submit"
-          className="w-full bg-primary text-white py-2 rounded-md hover:bg-blue-700 transition"
+          className="w-full bg-primary text-white py-2 rounded-md hover:scale-105 transition"
           disabled={loading}
         >
           {loading ? 'Submitting...' : 'Submit'}
