@@ -1,4 +1,5 @@
 'use client';
+import { showToast } from '@/ui-components/Toast';
 import { useState } from 'react';
 import Confetti from 'react-confetti';
 
@@ -17,8 +18,6 @@ const BulkPurchaseForm = () => {
   });
 
   const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
-  const [error, setError] = useState('');
   const [showConfetti, setShowConfetti] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -28,8 +27,6 @@ const BulkPurchaseForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setError('');
-    setSuccess(false);
 
     const response = await fetch('/api/send-email', {
       method: 'POST',
@@ -41,9 +38,9 @@ const BulkPurchaseForm = () => {
     setLoading(false);
 
     if (data.success) {
-      setSuccess(true);
       setShowConfetti(true);
       setTimeout(() => setShowConfetti(false), 5000);
+      showToast('Your request has been sent successfully!', 'success');
       setFormData({
         name: '',
         email: '',
@@ -57,7 +54,7 @@ const BulkPurchaseForm = () => {
         subject: 'New Purchase',
       });
     } else {
-      setError('Failed to send message. Please try again.');
+      showToast('Failed to send message. Please try again.', 'error');
     }
   };
 
@@ -192,9 +189,7 @@ const BulkPurchaseForm = () => {
           {loading ? 'Submitting...' : 'Submit'}
         </button>
 
-        {success && <p className="text-green-600 text-center">Your request has been sent successfully!</p>}
         {showConfetti && <Confetti />}
-        {error && <p className="text-red-600 text-center">{error}</p>}
       </form>
     </div>
   );

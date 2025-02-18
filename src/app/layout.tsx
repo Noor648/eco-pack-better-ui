@@ -4,6 +4,7 @@ import './globals.css';
 
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Toast from '@/ui-components/Toast';
 
 const varelaRound = Varela_Round({
   subsets: ['latin'], // Correctly specify subsets
@@ -24,6 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${varelaRound.variable}`}>
+        <Toast />
         <Navbar />
         <main>{children}</main>
         <Footer />

@@ -1,11 +1,11 @@
 'use client';
+import { showToast } from '@/ui-components/Toast';
 import React, { useState, useRef, useEffect } from 'react';
 import Confetti from 'react-confetti';
 
 const Newsletter = () => {
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState('');
   const [showConfetti, setShowConfetti] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [windowHeight, setWindowHeight] = useState(window.innerHeight);
@@ -36,7 +36,6 @@ const Newsletter = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setMessage('');
 
     try {
       const response = await fetch('/api/send-email', {
@@ -53,15 +52,15 @@ const Newsletter = () => {
       const result = await response.json();
 
       if (result.success) {
-        setMessage('Subscription successful!');
         setEmail('');
         setShowConfetti(true);
-        setTimeout(() => setShowConfetti(false), 5000); // Hide after 5 seconds
+        setTimeout(() => setShowConfetti(false), 5000);
+        showToast('Request sent for subscription', 'success');
       } else {
-        setMessage('Failed to subscribe. Please try again.');
+        showToast('Failed to subscribe. Please try again.', 'error');
       }
     } catch (error) {
-      setMessage('An error occurred. Please try again.');
+      showToast('An error occurred. Please try again.', 'error');
     } finally {
       setLoading(false);
     }
@@ -94,7 +93,6 @@ const Newsletter = () => {
           {loading ? 'Submitting...' : 'Subscribe'}
         </button>
       </form>
-      {message && <p className="mt-4">{message}</p>}
       {showConfetti && (
         <Confetti
           width={windowWidth}
