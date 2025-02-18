@@ -1,13 +1,71 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import Confetti from 'react-confetti';
 
 const Newsletter = () => {
   const [email, setEmail] = useState('');
-  //   const [loading, setLoading] = useState(false);
-  //   const [message, setMessage] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState('');
+  const [showConfetti, setShowConfetti] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
+  const formRef = useRef<HTMLDivElement | null>(null);
 
-  //   const handleSubmit = async (e: React.FormEvent) => {
-  //   };
+  // Update the window dimensions on resize
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+      setWindowHeight(window.innerHeight);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  // Track the form's position relative to the viewport
+  const getFormPosition = () => {
+    if (formRef.current) {
+      const rect = formRef.current.getBoundingClientRect();
+      return rect.top + window.scrollY; // Get the top position of the form
+    }
+    return 0;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setMessage('');
+
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          from: email,
+          subject: 'Newsletter Subscription',
+          emailType: 'newsletter',
+          email, // Only email is needed for newsletter
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setMessage('Subscription successful!');
+        setEmail('');
+        setShowConfetti(true);
+        setTimeout(() => setShowConfetti(false), 5000); // Hide after 5 seconds
+      } else {
+        setMessage('Failed to subscribe. Please try again.');
+      }
+    } catch (error) {
+      setMessage('An error occurred. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="bg-primary text-white py-10 px-4 text-center">
@@ -16,7 +74,8 @@ const Newsletter = () => {
         Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.
       </p>
       <form
-        // onSubmit={handleSubmit}
+        ref={formRef}
+        onSubmit={handleSubmit}
         className="flex flex-col sm:flex-row justify-center items-center space-y-3 sm:space-y-0 sm:space-x-3"
       >
         <input
@@ -30,13 +89,27 @@ const Newsletter = () => {
         <button
           type="submit"
           className="bg-white text-primary px-4 py-2 rounded-lg hover:bg-gray-200 transition disabled:opacity-50"
-          //   disabled={loading}
+          disabled={loading}
         >
-          {/* {loading ? 'Submitting...' : 'Subscribe'} */}
-          Subscribe
+          {loading ? 'Submitting...' : 'Subscribe'}
         </button>
       </form>
-      {/* {message && <p className="mt-4">{message}</p>} */}
+      {message && <p className="mt-4">{message}</p>}
+      {showConfetti && (
+        <Confetti
+          width={windowWidth}
+          height={windowHeight}
+          recycle={false} // Set to false to avoid looping confetti
+          initialVelocityY={5} // Adjust the confetti's direction
+          numberOfPieces={150} // Adjust thne intensity of the confetti
+          gravity={0.2} // Adjust the gravity effect
+          style={{
+            position: 'absolute',
+            top: getFormPosition() - 150, // Position the confetti below the form
+            left: 0,
+          }}
+        />
+      )}
     </div>
   );
 };
