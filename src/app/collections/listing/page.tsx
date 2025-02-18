@@ -11,7 +11,7 @@ export default function ProductListing() {
   return (
     <div className="container mx-auto p-4">
       <div className="flex justify-between items-center mb-6">
-        <span className="text-gray-600 text-sm">{productsList.length} products</span>
+        <span className="text-tertiary text-sm">{productsList.length} products</span>
         <div className="flex items-center gap-4">
           <select className="border p-2 text-sm rounded-md">
             <option>Best selling</option>

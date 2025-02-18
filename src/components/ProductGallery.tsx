@@ -66,7 +66,7 @@ const ProductGallery = ({ images }: { images: string[] }) => {
               src={image}
               alt={`Thumbnail ${index}`}
               className={`w-20 h-20 border rounded-md cursor-pointer transition-transform ${
-                selectedImage === image ? 'border-green-600 scale-105' : 'border-gray-300'
+                selectedImage === image ? 'border-secondary scale-105' : 'border-gray-300'
               }`}
               onClick={() => setSelectedImage(image)}
             />

@@ -15,7 +15,7 @@ export default function Navbar() {
 
   return (
     <nav className="flex items-center justify-between px-8 py-3 shadow-md">
-      <div className="text-2xl font-bold text-green-600">
+      <div className="text-2xl font-bold text-secondary">
         ECO<span className="text-gray-800">PAK</span>
       </div>
 
@@ -70,7 +70,7 @@ export default function Navbar() {
             <input
               type="text"
               placeholder="Search"
-              className="w-64 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-600"
+              className="w-64 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-secondary"
             />
             <button className="ml-2 text-black hover:scale-105" onClick={() => setSearchOpen(false)}>
               <RxCross2 size={20} />

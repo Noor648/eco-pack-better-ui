@@ -218,7 +218,7 @@ export const filters = [
     content: (
       <div>
         <input type="range" min="0" max="7400" className="w-full" />
-        <div className="flex justify-between text-sm text-gray-600">
+        <div className="flex justify-between text-sm text-tertiary">
           <span>Rs. 0.00</span>
           <span>Rs. 7,400.00</span>
         </div>

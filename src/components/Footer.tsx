@@ -12,7 +12,7 @@ const Footer = () => {
             <ul className="space-y-2">
               {navLinks.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className="text-gray-600 hover:text-gray-900">
+                  <a href={link.href} className="text-tertiary hover:text-gray-900">
                     {link.label}
                   </a>
                 </li>
@@ -26,7 +26,7 @@ const Footer = () => {
             <ul className="space-y-2">
               {customerSupport.map((item) => (
                 <li key={item.label}>
-                  <a href={item.href} className="text-gray-600 hover:text-gray-900">
+                  <a href={item.href} className="text-tertiary hover:text-gray-900">
                     {item.label}
                   </a>
                 </li>
@@ -37,10 +37,10 @@ const Footer = () => {
           {/* Stay in Touch Section */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Get in touch</h3>
-            <p className="text-gray-600 mb-2">
+            <p className="text-tertiary mb-2">
               <i className="fas fa-phone"></i> {stayInTouch.phone}
             </p>
-            <p className="text-gray-600 mb-4">
+            <p className="text-tertiary mb-4">
               <i className="fas fa-envelope"></i>{' '}
               <a href={`mailto:${stayInTouch.email}`} className="hover:underline">
                 {stayInTouch.email}

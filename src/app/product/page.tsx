@@ -51,9 +51,7 @@ const ProductPage = () => {
           {/* Price */}
           <p className="text-xl font-normal">Price: Rs. {PRODUCT_DETAILS.price.toLocaleString()}</p>
 
-          <button className="w-full px-6 py-3 bg-green-700 border border-black text-white rounded-md">
-            Buy it now
-          </button>
+          <button className="w-full px-6 py-3 bg-primary border border-black text-white rounded-md">Buy it now</button>
 
           {/* Related Product */}
           <div>
@@ -63,13 +61,13 @@ const ProductPage = () => {
               <div>
                 <p>{PRODUCT_DETAILS.relatedProduct.title}</p>
                 <p className="text-sm text-gray-500">{PRODUCT_DETAILS.relatedProduct.quantity}</p>
-                <p className="text-sm text-green-600 font-bold">
+                <p className="text-sm text-secondary font-bold">
                   Rs. {PRODUCT_DETAILS.relatedProduct.price.toLocaleString()}{' '}
                   <span className="line-through text-gray-400">
                     Rs. {PRODUCT_DETAILS.relatedProduct.originalPrice.toLocaleString()}
                   </span>
                 </p>
-                <button className="px-4 py-2 bg-green-600 text-white text-sm rounded-md">+ Add</button>
+                <button className="px-4 py-2 bg-secondary text-white text-sm rounded-md">+ Add</button>
               </div>
             </div>
           </div>
