@@ -189,7 +189,7 @@ const BulkPurchaseForm = () => {
           {loading ? 'Submitting...' : 'Submit'}
         </button>
 
-        {showConfetti && <Confetti />}
+        {showConfetti && <Confetti width={window.innerWidth - 20} />}
       </form>
     </div>
   );

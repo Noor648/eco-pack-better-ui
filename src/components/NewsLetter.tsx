@@ -7,14 +7,12 @@ const Newsletter = () => {
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [windowHeight, setWindowHeight] = useState(window.innerHeight);
   const formRef = useRef<HTMLDivElement | null>(null);
 
   // Update the window dimensions on resize
   useEffect(() => {
     const handleResize = () => {
-      setWindowWidth(window.innerWidth);
       setWindowHeight(window.innerHeight);
     };
 
@@ -95,7 +93,7 @@ const Newsletter = () => {
       </form>
       {showConfetti && (
         <Confetti
-          width={windowWidth}
+          width={window.innerWidth - 20}
           height={windowHeight}
           recycle={false} // Set to false to avoid looping confetti
           initialVelocityY={5} // Adjust the confetti's direction
