@@ -1,17 +1,17 @@
 'use client';
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import Link from 'next/link';
 import { categories, navLinks } from '../../data';
 import { AiOutlineDown } from 'react-icons/ai';
 import { CiSearch } from 'react-icons/ci';
 import { RxCross2 } from 'react-icons/rx';
-import { useRouter } from 'next/navigation';
 
 export default function Navbar() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const router = useRouter();
+  const handleMouseEnter = useCallback(() => setIsDropdownOpen(true), []);
+  const handleMouseLeave = useCallback(() => setIsDropdownOpen(false), []);
 
   return (
     <nav className="flex items-center justify-between px-8 py-3 shadow-md">
@@ -23,24 +23,18 @@ export default function Navbar() {
       <ul className="flex gap-12 items-center">
         {navLinks.map((link) =>
           link.dropdown ? (
-            <li
-              key={link.label}
-              className="relative"
-              onMouseEnter={() => setIsDropdownOpen(true)}
-              onMouseLeave={() => setIsDropdownOpen(false)}
-            >
-              <button
+            <li key={link.label} className="relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+              <Link
+                href={link.href}
                 className="flex items-center text-[14px] py-2 border-b-2 border-white hover:border-black"
-                onClick={() => {
-                  router.push(link.href);
-                }}
               >
                 {link.label}
                 <AiOutlineDown className="text-sm pl-1" />
-              </button>
+              </Link>
+
               {/* Dropdown Menu */}
               {isDropdownOpen && (
-                <div className="absolute text-[13px] text-gray-700 bg-white border border-gray-300 rounded shadow-md z-10 ">
+                <div className="absolute text-[13px] text-gray-700 bg-white border border-gray-300 rounded shadow-md z-10">
                   <ul>
                     {categories.map((category) => (
                       <li key={category.name}>
@@ -54,7 +48,7 @@ export default function Navbar() {
               )}
             </li>
           ) : (
-            <li key={link.label} className="py-2 text-[14px] border-b-2 border-b-2 border-white hover:border-black">
+            <li key={link.label} className="py-2 text-[14px] border-b-2 border-white hover:border-black">
               <Link href={link.href} className="">
                 {link.label}
               </Link>

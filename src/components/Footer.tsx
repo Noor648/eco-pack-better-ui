@@ -1,5 +1,6 @@
 import { stayInTouch } from '@/Constants/StayInTouchContants';
 import { customerSupport, navLinks } from '../../data';
+import Link from 'next/link';
 
 const Footer = () => {
   return (
@@ -12,9 +13,9 @@ const Footer = () => {
             <ul className="space-y-2">
               {navLinks.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className="text-tertiary hover:text-gray-900">
+                  <Link href={link.href} className="text-tertiary hover:text-gray-900">
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -26,9 +27,9 @@ const Footer = () => {
             <ul className="space-y-2">
               {customerSupport.map((item) => (
                 <li key={item.label}>
-                  <a href={item.href} className="text-tertiary hover:text-gray-900">
+                  <Link href={item.href} className="text-tertiary hover:text-gray-900">
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -49,9 +50,9 @@ const Footer = () => {
             <h4 className="font-semibold mb-2">Follow us</h4>
             <div className="flex space-x-4">
               {stayInTouch.socialLinks.map((social) => (
-                <a key={social.platform} href={social.href} className="text-black hover:scale-110">
+                <Link key={social.platform} href={social.href} className="text-black hover:scale-110">
                   {social.icon}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -60,9 +61,9 @@ const Footer = () => {
         {/* Bottom Footer */}
         <div className="mt-8 border-t border-gray-200 pt-4 text-center text-sm text-black">
           <span>© 2025 EcoPakOnline.</span>
-          <a href="https://brandcube.co/" className="hover:underline ml-5">
+          <Link href="https://brandcube.co/" className="hover:underline ml-5">
             Powered by Brandcube
-          </a>
+          </Link>
         </div>
       </div>
     </footer>

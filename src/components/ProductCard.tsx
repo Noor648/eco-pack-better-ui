@@ -1,5 +1,5 @@
 'use client';
-import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { FaSearch, FaPlus } from 'react-icons/fa';
 
 type ProductProps = {
@@ -11,13 +11,8 @@ type ProductProps = {
 };
 
 export default function Product({ imageSrc, name, isOnSale = false, originalPrice, price }: ProductProps) {
-  const router = useRouter();
-
-  const navigateToProduct = () => {
-    router.push('/product');
-  };
   return (
-    <div className="relative group" onClick={navigateToProduct}>
+    <Link className="relative group" href={'/product'}>
       {/* Sale Badge */}
       {isOnSale && <span className="absolute left-0 bg-red-500 text-white text-xs py-1 px-2 z-5">SALE</span>}
 
@@ -46,6 +41,6 @@ export default function Product({ imageSrc, name, isOnSale = false, originalPric
       ) : (
         <div className="text-secondary font-semibold">{originalPrice}</div>
       )}
-    </div>
+    </Link>
   );
 }

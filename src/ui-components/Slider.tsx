@@ -15,9 +15,16 @@ type SliderProps = {
   loop?: boolean;
   effect?: 'slide' | 'fade';
   speed?: number; // Transition speed
+  autoplayDelay?: number;
 };
 
-export default function Slider({ slides, loop = true, effect = 'fade', speed = 1000 }: SliderProps) {
+export default function Slider({
+  slides,
+  loop = true,
+  effect = 'fade',
+  speed = 1000,
+  autoplayDelay = 1000,
+}: SliderProps) {
   useEffect(() => {
     import('swiper').then((SwiperCore) => {
       SwiperCore.default.use([Navigation, EffectFade]);
@@ -37,6 +44,10 @@ export default function Slider({ slides, loop = true, effect = 'fade', speed = 1
         speed={speed}
         slidesPerView={1}
         className="relative h-full"
+        autoplay={{
+          delay: autoplayDelay,
+          // disableOnInteraction: false,
+        }}
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>{slide.content}</SwiperSlide>

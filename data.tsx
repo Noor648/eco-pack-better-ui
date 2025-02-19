@@ -37,6 +37,16 @@ export const PRODUCT_DETAILS = {
     'images/product-3.webp',
     'images/product-4.webp',
     'images/product-5.webp',
+    'images/product-1.webp',
+    'images/product-2.webp',
+    'images/product-3.webp',
+    'images/product-4.webp',
+    'images/product-5.webp',
+    'images/product-1.webp',
+    'images/product-2.webp',
+    'images/product-3.webp',
+    'images/product-4.webp',
+    'images/product-5.webp',
   ],
   accordionData: [
     {

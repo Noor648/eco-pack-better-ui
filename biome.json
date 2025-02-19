@@ -1,79 +1,78 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
-	"organizeImports": {
-	  "enabled": true
-	},
-	"formatter": {
-	  "enabled": true,
-	  "indentStyle": "space",
-	  "indentWidth": 2,
-	  "lineWidth": 120,
-	  "lineEnding": "lf",
-	  "ignore": ["**/node_modules/**"]
-	},
-	"javascript": {
-	  "formatter": {
-		"quoteStyle": "single",
-		"trailingCommas": "es5",
-		"semicolons": "always",
-		"arrowParentheses": "always"
-	  }
-	},
-	"linter": {
-	  "enabled": true,
-	  "rules": {
-		"recommended": false,
-		"complexity": {
-		  "noVoid": "warn",
-		  "useSimplifiedLogicExpression": "warn",
-		  "noUselessFragments": "warn",
-		  "noForEach": "warn",
-		  "noStaticOnlyClass": "warn",
-		  "useOptionalChain": "warn",
-		  "useSimpleNumberKeys": "warn"
-		},
-		"correctness": {
-		  "noUnreachable": "warn",
-		  "noUnusedVariables": "warn",
-		  "noConstantCondition": "warn",
-		  "noEmptyPattern": "warn",
-		  "useExhaustiveDependencies": "off"
-		},
-		"performance": {
-		  "noDelete": "warn"
-		},
-		"style": {
-		  "noNegationElse": "warn",
-		  "useBlockStatements": "warn",
-		  "useShorthandArrayType": "warn",
-		  "useTemplate": "warn",
-		  "noShoutyConstants": "warn",
-		  "noParameterAssign": "warn",
-		  "noUnusedTemplateLiteral": "warn",
-		  "useConst": "warn",
-		  "useDefaultParameterLast": "warn",
-		  "useSingleVarDeclarator": "warn",
-		  "noUselessElse": "warn"
-		},
-		"suspicious": {
-		  "noConsoleLog": "error",
-		  "noExplicitAny": "off",
-		  "noPrototypeBuiltins": "warn",
-		  "noRedundantUseStrict": "warn",
-		  "noArrayIndexKey": "warn"
-		},
-		"security": {
-		  "noDangerouslySetInnerHtml": "warn"
-		}
-	  }
-	},
-	"files": {
-	  "ignore": ["node_modules/**", ".next/**", "public/**"]
-	},
-	"vcs": {
-	  "enabled": true,
-	  "clientKind": "git",
-	  "useIgnoreFile": true
-	}
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "organizeImports": {
+    "enabled": true
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 120,
+    "lineEnding": "lf",
+    "ignore": ["**/node_modules/**"]
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "trailingCommas": "es5",
+      "semicolons": "always",
+      "arrowParentheses": "always"
+    }
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": false,
+      "complexity": {
+        "noVoid": "warn",
+        "useSimplifiedLogicExpression": "warn",
+        "noUselessFragments": "warn",
+        "noForEach": "warn",
+        "noStaticOnlyClass": "warn",
+        "useOptionalChain": "warn",
+        "useSimpleNumberKeys": "warn"
+      },
+      "correctness": {
+        "noUnreachable": "warn",
+        "noUnusedVariables": "warn",
+        "noConstantCondition": "warn",
+        "noEmptyPattern": "warn",
+        "useExhaustiveDependencies": "off"
+      },
+      "performance": {
+        "noDelete": "warn"
+      },
+      "style": {
+        "noNegationElse": "warn",
+        "useBlockStatements": "warn",
+        "useShorthandArrayType": "warn",
+        "useTemplate": "warn",
+        "noShoutyConstants": "warn",
+        "noParameterAssign": "warn",
+        "noUnusedTemplateLiteral": "warn",
+        "useConst": "warn",
+        "useDefaultParameterLast": "warn",
+        "useSingleVarDeclarator": "warn",
+        "noUselessElse": "warn"
+      },
+      "suspicious": {
+        "noConsoleLog": "error",
+        "noExplicitAny": "off",
+        "noPrototypeBuiltins": "warn",
+        "noRedundantUseStrict": "warn",
+        "noArrayIndexKey": "warn"
+      },
+      "security": {
+        "noDangerouslySetInnerHtml": "warn"
+      }
+    }
+  },
+  "files": {
+    "ignore": ["node_modules/**", ".next/**", "public/**"]
+  },
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
   }
-  
+}
