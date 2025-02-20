@@ -15,6 +15,7 @@ const BulkPurchaseForm = () => {
     businessNature: '',
     from: 'Bulk Purchase',
     subject: 'New Purchase',
+    emailType: 'bulk-purchase',
   });
 
   const [loading, setLoading] = useState(false);
@@ -52,6 +53,7 @@ const BulkPurchaseForm = () => {
         businessNature: '',
         from: 'Bulk Purchase',
         subject: 'New Purchase',
+        emailType: 'bulk-purchase',
       });
     } else {
       showToast('Failed to send message. Please try again.', 'error');
