@@ -66,7 +66,7 @@ const BulkPurchaseForm = () => {
       </p>
 
       <form onSubmit={handleSubmit} className="space-y-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
             <label className="block text-gray-700">
               Your Name <span className="text-red-500">*</span>
@@ -74,7 +74,7 @@ const BulkPurchaseForm = () => {
             <input
               type="text"
               name="name"
-              className="w-full p-2 border border-gray-300 rounded"
+              className="w-full p-2 border border-gray-300 rounded-lg"
               value={formData.name}
               onChange={handleChange}
               required
@@ -87,7 +87,7 @@ const BulkPurchaseForm = () => {
             <input
               type="email"
               name="email"
-              className="w-full p-2 border border-gray-300 rounded"
+              className="w-full p-2 border border-gray-300 rounded-lg"
               value={formData.email}
               onChange={handleChange}
               required
@@ -95,7 +95,7 @@ const BulkPurchaseForm = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
             <label className="block text-gray-700">
               Phone <span className="text-red-500">*</span>
@@ -103,7 +103,7 @@ const BulkPurchaseForm = () => {
             <input
               type="tel"
               name="phone"
-              className="w-full p-2 border border-gray-300 rounded"
+              className="w-full p-2 border border-gray-300 rounded-lg"
               value={formData.phone}
               onChange={handleChange}
               required
@@ -116,7 +116,7 @@ const BulkPurchaseForm = () => {
             <input
               type="text"
               name="city"
-              className="w-full p-2 border border-gray-300 rounded"
+              className="w-full p-2 border border-gray-300 rounded-lg"
               value={formData.city}
               onChange={handleChange}
               required
@@ -124,11 +124,11 @@ const BulkPurchaseForm = () => {
           </div>
         </div>
 
-        <div className="space-y-2">
+        <div className="space-y-4">
           <label className="block text-gray-700">Are you looking to purchase more than 1000 pcs?</label>
           <select
             name="purchaseIntent"
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 border border-gray-300 rounded-lg"
             value={formData.purchaseIntent}
             onChange={handleChange}
             required
@@ -139,14 +139,14 @@ const BulkPurchaseForm = () => {
           </select>
         </div>
 
-        <div className="space-y-2">
+        <div className="space-y-4">
           <label className="block text-gray-700">
             Institution/Shop/Restaurant <span className="text-red-500">*</span>
           </label>
           <input
             type="text"
             name="institution"
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 border border-gray-300 rounded-lg"
             value={formData.institution}
             onChange={handleChange}
             required
@@ -157,7 +157,7 @@ const BulkPurchaseForm = () => {
           <label className="block text-gray-700">Message</label>
           <textarea
             name="message"
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 border border-gray-300 rounded-lg"
             value={formData.message}
             onChange={handleChange}
           />
@@ -169,7 +169,7 @@ const BulkPurchaseForm = () => {
           </label>
           <select
             name="businessNature"
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 border border-gray-300 rounded-lg"
             value={formData.businessNature}
             onChange={handleChange}
             required

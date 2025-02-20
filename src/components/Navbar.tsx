@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import Link from 'next/link';
 import { categories, navLinks } from '../../data';
 import { AiOutlineDown, AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
@@ -13,6 +13,9 @@ export default function Navbar() {
 
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
+  const handleMouseEnter = useCallback(() => setIsDropdownOpen(true), []);
+  const handleMouseLeave = useCallback(() => setIsDropdownOpen(false), []);
+
   return (
     <nav className="shadow-md bg-white">
       <div className="max-w-screen-xl mx-auto flex items-center justify-between px-6 py-3">
@@ -25,18 +28,18 @@ export default function Navbar() {
         <ul className="hidden md:flex gap-10 items-center">
           {navLinks.map((link) =>
             link.dropdown ? (
-              <li key={link.label} className="relative">
-                <button
+              <li key={link.label} className="relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                <Link
                   className="flex items-center text-[14px] py-2 border-b-2 border-white hover:border-black"
-                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                  href={link.href}
                 >
                   {link.label}
                   <AiOutlineDown className="text-sm pl-1" />
-                </button>
+                </Link>
 
                 {/* Dropdown Menu */}
                 {isDropdownOpen && (
-                  <div className="absolute text-[13px] text-gray-700 bg-white border border-gray-300 rounded shadow-md z-10 mt-1">
+                  <div className="absolute text-[13px] text-gray-700 bg-white border border-gray-300 rounded shadow-md z-10">
                     <ul>
                       {categories.map((category) => (
                         <li key={category.name}>
@@ -117,11 +120,7 @@ export default function Navbar() {
                 </li>
               ) : (
                 <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="block py-2 text-[14px]"
-                    onClick={closeMobileMenu}
-                  >
+                  <Link href={link.href} className="block py-2 text-[14px]" onClick={closeMobileMenu}>
                     {link.label}
                   </Link>
                 </li>
