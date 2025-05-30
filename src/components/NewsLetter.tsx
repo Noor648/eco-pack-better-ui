@@ -6,7 +6,7 @@ import Confetti from 'react-confetti';
 const Newsletter = () => {
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
-  const [showConfetti, setShowConfetti] = useState(false);
+  const [showConfetti, setShowConfetti] = useState(0);
   const [windowHeight, setWindowHeight] = useState<number | null>(null);
   const formRef = useRef<any>(null);
 
@@ -99,7 +99,7 @@ const Newsletter = () => {
       {showConfetti && (
         <Confetti
           width={window.innerWidth - 20}
-          height={windowHeight}
+          height={windowHeight || 500}
           recycle={false} // Set to false to avoid looping confetti
           initialVelocityY={5} // Adjust the confetti's direction
           numberOfPieces={150} // Adjust thne intensity of the confetti
