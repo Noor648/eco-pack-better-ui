@@ -1,3 +1,5 @@
+EcoPak Better UI is a modern and visually enhanced reimagining of the original EcoPak ecommerce website, built using Next.js (App Router) and Tailwind CSS. This project was created as a testing ground to explore improved UI/UX design patterns, responsive layouts, and a smoother user experience. It also served as a practical opportunity to get hands-on experience with Next.js App Routing and server-side logic, including API route handlers, Server Components, and email handling via Nodemailer.
+
 # EcoPak Better UI
 
 [Live Demo](https://eco-pack-better-ui.vercel.app/)
@@ -17,13 +19,7 @@ A modern, enhanced UI/UX version of the original EcoPak ecommerce website built 
 - [API](#api)  
 - [Contributing](#contributing)  
 - [License](#license)
-
----
-
-## About
-
-EcoPak Better UI is a modern and visually enhanced reimagining of the original EcoPak ecommerce website, built using Next.js (App Router) and Tailwind CSS. This project was created as a testing ground to explore improved UI/UX design patterns, responsive layouts, and a smoother user experience. It also served as a practical opportunity to get hands-on experience with Next.js App Routing and server-side logic, including API route handlers, Server Components, and email handling via Nodemailer.
-
+  
 ---
 
 ## Features
