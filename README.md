@@ -22,7 +22,7 @@ A modern, enhanced UI/UX version of the original EcoPak ecommerce website built 
 
 ## About
 
-EcoPak Better UI is a frontend project inspired by an existing ecommerce platform, focused on delivering a cleaner, more intuitive user interface and smoother interactions. The site includes product collections, bulk purchase options, email integrations, and responsive design for an optimal shopping experience.
+EcoPak Better UI is a modern and visually enhanced reimagining of the original EcoPak ecommerce website, built using Next.js (App Router) and Tailwind CSS. This project was created as a testing ground to explore improved UI/UX design patterns, responsive layouts, and a smoother user experience. It also served as a practical opportunity to get hands-on experience with Next.js App Routing and server-side logic, including API route handlers, Server Components, and email handling via Nodemailer.
 
 ---
 
@@ -54,6 +54,7 @@ EcoPak Better UI is a frontend project inspired by an existing ecommerce platfor
 
 ## Project Structure
 
+```
 app
  ├─ api/send-email/route.ts          # API route to handle email sending
  ├─ bulk-purchase/page.tsx           # Bulk purchase page
@@ -65,6 +66,7 @@ Constants                            # Constant values for features and contact 
 ui-components                        # Custom UI elements like Accordion, Slider, Toast
 utils                                # Utility functions (e.g. email helpers)
 styles                               # Global and component-specific styles
+```
 
 ---
 
