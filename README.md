@@ -79,21 +79,26 @@ styles                               # Global and component-specific styles
 
 ### Installation
 
+```
 git clone git@github.com:Noor648/eco-pack-better-ui.git
 cd ecopak
 npm install
+```
 
 ### Installation
 
 Create a .env file in the root of the project and add your SMTP configuration for the email service:
 
+```
 SMTP_HOST=smtp-relay.brevo.com
 SMTP_PORT=587
 SMTP_USER=your_smtp_username
 SMTP_PASS=your_smtp_password
 EMAIL=your_email@gmail.com
+```
 
 ### Running Locally
-
+```
 npm run dev
+```
 
