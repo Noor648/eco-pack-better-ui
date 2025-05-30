@@ -7,20 +7,25 @@ const Newsletter = () => {
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
-  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
-  const formRef = useRef<HTMLDivElement | null>(null);
+  const [windowHeight, setWindowHeight] = useState<number | null>(null);
+  const formRef = useRef<any>(null);
 
-  // Update the window dimensions on resize
   useEffect(() => {
-    const handleResize = () => {
+    if (typeof window !== 'undefined') {
       setWindowHeight(window.innerHeight);
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+    }
   }, []);
+  // Update the window dimensions on resize
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setWindowHeight(window.innerHeight);
+  //   };
+
+  //   window.addEventListener('resize', handleResize);
+  //   return () => {
+  //     window.removeEventListener('resize', handleResize);
+  //   };
+  // }, []);
 
   // Track the form's position relative to the viewport
   const getFormPosition = () => {
@@ -33,35 +38,35 @@ const Newsletter = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
+    // setLoading(true);
 
-    try {
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          from: email,
-          subject: 'Newsletter Subscription',
-          emailType: 'newsletter',
-          email, // Only email is needed for newsletter
-        }),
-      });
+    // try {
+    //   const response = await fetch('/api/send-email', {
+    //     method: 'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify({
+    //       from: email,
+    //       subject: 'Newsletter Subscription',
+    //       emailType: 'newsletter',
+    //       email, // Only email is needed for newsletter
+    //     }),
+    //   });
 
-      const result = await response.json();
+    //   const result = await response.json();
 
-      if (result.success) {
-        setEmail('');
-        setShowConfetti(true);
-        setTimeout(() => setShowConfetti(false), 5000);
+    //   if (result.success) {
+    //     setEmail('');
+    //     setShowConfetti(true);
+    //     setTimeout(() => setShowConfetti(false), 5000);
         showToast('Request sent for subscription', 'success');
-      } else {
-        showToast('Failed to subscribe. Please try again.', 'error');
-      }
-    } catch (error) {
-      showToast('An error occurred. Please try again.', 'error');
-    } finally {
-      setLoading(false);
-    }
+    //   } else {
+    //     showToast('Failed to subscribe. Please try again.', 'error');
+    //   }
+    // } catch (error) {
+    //   showToast('An error occurred. Please try again.', 'error');
+    // } finally {
+    //   setLoading(false);
+    // }
   };
 
   return (
